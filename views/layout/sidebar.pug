@@ -1,2 +1,14 @@
 aside.sidebar
-    p Sidebar
+    a.logo(href="/")
+        img(src="./images/LogoGocast.png", alt="Gocast UI")
+    ul.menu
+        each item in [{text: "Home",icon: "./images/icons/icon-home.svg",href:"/"},{text: "Trending",icon: "./images/icons/icon-trending.svg", href:"/trending.html"},{text: "Playlist",icon: "./images/icons/icon-play.svg"},{text: "Subscriptions",icon: "./images/icons/icon-subscriptions.svg"}]
+            +menuItem(item.text, item.icon, item.href)
+    ul.menu
+        h3.menu-heading Podcasters
+        each item in [{text: "Dashboard",icon: "./images/icons/icon-dashboarh.svg"},{text: "Episodes",icon: "./images/icons/icon-microphone.svg"},{text: "Team",icon: "./images/icons/icon-users.svg"},{text: "Subscribers",icon: "./images/icons/icon-user.svg"}]
+            +menuItem(item.text, item.icon)
+    ul.menu
+        h3.menu-heading Community
+        each item in [{text: "Leaderboard",icon: "./images/icons/icon-star.svg"}]
+            +menuItem(item.text, item.icon)

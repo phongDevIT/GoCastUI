@@ -1,0 +1,48 @@
+@use "../abstracts" as abst;
+.sidebar {
+    @include abst.bg(white);
+    padding: 48px 30px 0;
+    border-right: 1px solid abst.$gray-natural;
+}
+.logo {
+    display: block;
+    margin-bottom: 44px;
+}
+.menu {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    --gap: 26px;
+    &:not(:last-child):after {
+        content: "";
+        display: block;
+        height: 1px;
+        background-color: abst.$graye9;
+        margin-block: var(--gap);
+    }
+    &-heading {
+        font-size: 13px;
+        margin-bottom: 10px;
+        line-height: 19px;
+        color: abst.$text-gray;
+        padding-left: 20px;
+    }
+    &-link {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: abst.$text-gray;
+        font-size: 14px;
+        line-height: 20px;
+        font-weight: 500;
+        padding: 8px 30px 8px 20px;
+        border-radius: 8px;
+        &:hover {
+            background: var(
+                --gradient,
+                linear-gradient(142deg, #415ef4 0%, #7141ef 100%)
+            );
+            color: white;
+        }
+    }
+}

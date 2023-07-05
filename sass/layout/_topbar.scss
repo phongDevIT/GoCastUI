@@ -1,0 +1,56 @@
+@use "../abstracts" as abst;
+
+.topbar {
+    padding: 24px 56px;
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &-right {
+        display: flex;
+        align-items: center;
+        gap: 24px;
+        & > * {
+            flex-shrink: 0;
+        }
+    }
+}
+.profile {
+    display: block;
+    @include abst.size(48px);
+    img {
+        border-radius: 100rem;
+        @include abst.cover();
+    }
+}
+.button-upload {
+    height: 48px;
+    border-radius: 8px;
+    background: var(--primary-primary, #6c5dd3);
+    padding: 0 16px;
+    gap: 6px;
+    color: white;
+    @include abst.fw("semibold");
+    display: flex;
+    align-items: center;
+}
+.search {
+    padding: 12px 20px;
+    border-radius: 12px;
+    flex: 0 1 360px;
+    gap: 12px;
+    display: flex;
+    align-items: center;
+    background-color: #f0f3f6;
+    &-input {
+        @include abst.bg(tranparent);
+        border: none;
+        flex: 1px;
+        font-size: 15px;
+        font-weight: 500;
+        line-height: 22px;
+        color: abst.$primary-color;
+        caret-color: abst.$primary-color;
+        @include abst.placeholder(abst.$gray2);
+    }
+}
